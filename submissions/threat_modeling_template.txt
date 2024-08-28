@@ -55,3 +55,18 @@ Given Kubernetes' system components and the STRIDE framework, identify five pote
 
 Docker-bench Run Results and Analysis
 From the failed findings, select and document 3 findings from the Docker-bench results that you want to harden based on the 5 attack surface areas you identified in Step 1. At least 1 of the 3 hardened findings should be different from the ones mentioned in the exercise (i.e. 5.10, 5.14, and 5.22).
+
+    1. I ensure all auditing for docker is config properly 
+        [FAIL] 1.2.3 Ensure auditing is configured for the docker daemon (Scored)
+        [FAIL] 1.2.4 Ensure auditing is configured for Docker files and directories - /var/lib/docker (Scored)
+        [FAIL] 1.2.5 Ensure auditing is configured for Docker files and directories - /etc/docker (Scored)
+        [FAIL] 1.2.6 Ensure auditing is configured for Docker files and directories - docker.service (Scored)
+        [FAIL] 1.2.7 Ensure auditing is configured for Docker files and directories - docker.socket (Scored)
+        [FAIL] 1.2.8 Ensure auditing is configured for Docker files and directories - /etc/default/docker (Scored)
+        [FAIL] 1.2.9 Ensure auditing is configured for Docker files and directories - /etc/sysconfig/docker (Scored)
+        [FAIL] 1.2.10 Ensure auditing is configured for Docker files and directories - /etc/docker/daemon.json (Scored)
+        [FAIL] 1.2.11 Ensure auditing is configured for Docker files and directories - /usr/bin/docker-containerd (Scored)
+        [FAIL] 1.2.12 Ensure auditing is configured for Docker files and directories - /usr/sbin/runc (Scored)
+    2. I Ensure Content trust for Docker is Enabled (Scored)
+        [FAIL] 4.5 Ensure Content trust for Docker is Enabled (Scored)
+    3. 
