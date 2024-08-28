@@ -1,0 +1,57 @@
+Docker Threat Modeling
+Given Docker's system components and the STRIDE framework, identify five potential threats that may arise.
+    1. Spoofing:
+
+        Threat: An attacker could spoof the identity of a Docker container or service.
+        Example: If Docker Daemon is not properly secured, an attacker might gain unauthorized access by impersonating a legitimate container or service, potentially gaining control over containerized applications or services.
+    
+    2. Tampering:
+
+        Threat: Modification of Docker Images or Containers.
+        Example: An attacker could modify a Docker image to include malicious code. If this compromised image is then used in production, it could lead to security breaches. Similarly, tampering with a running container could alter its behavior or compromise its security.
+    
+    3. Repudiation:
+
+        Threat: Users or services denying their actions or interactions with Docker.
+        Example: If Docker logs are not properly managed or if Docker Daemon is misconfigured, it might be difficult to trace malicious activities or determine who initiated a particular action, making it harder to audit and hold parties accountable.
+    
+    4. Information Disclosure:
+
+        Threat: Unauthorized access to sensitive data within Docker containers or images.
+        Example: Sensitive information (e.g., environment variables, secrets, or configuration files) might be exposed if Docker containers are not properly isolated or if Docker volumes are misconfigured, leading to data leakage.
+    
+    5. Denial of Service (DoS):
+
+        Threat: Overloading Docker resources or causing container/resource exhaustion.
+        Example: An attacker might exploit vulnerabilities in Docker's resource management or configuration, such as flooding the Docker Daemon with excessive requests or creating a large number of containers, leading to resource exhaustion and disruption of service.
+
+Kubernetes Threat Modeling
+Given Kubernetes' system components and the STRIDE framework, identify five potential threats that may arise.
+
+    1. Spoofing:
+
+        Threat: Unauthorized access through identity spoofing.
+        Example: An attacker could exploit vulnerabilities or misconfigurations in Kubernetes authentication mechanisms to impersonate a legitimate user or service account. If successful, they could gain unauthorized access to the Kubernetes API server or other critical components.
+    
+    2. Tampering:
+
+        Threat: Modification of Kubernetes resources or configurations.
+        Example: An attacker with access to the Kubernetes API server or etcd could alter the configuration of deployments, services, or other resources. This could lead to malicious changes in application behavior or exposure of sensitive data.
+    
+    3. Repudiation:
+
+        Threat: Lack of accountability for actions within the cluster.
+        Example: If Kubernetes audit logs or event logging are not properly configured, it could be difficult to trace and attribute actions within the cluster. This lack of visibility makes it challenging to identify who performed specific actions, which can hinder incident response and accountability.
+    
+    4. Information Disclosure:
+
+        Threat: Unauthorized access to sensitive data within the cluster.
+        Example: Misconfigured Role-Based Access Control (RBAC) policies or insufficiently secured secrets could allow unauthorized users or services to access sensitive information, such as environment variables, secrets, or application data.
+    
+    5. Denial of Service (DoS):
+
+        Threat: Disruption of cluster resources or services.
+        Example: An attacker could exploit vulnerabilities or misconfigurations to overload the Kubernetes control plane or nodes, such as by creating excessive numbers of pods or services. This could lead to resource exhaustion, degraded performance, or downtime for applications running in the cluster.
+
+Docker-bench Run Results and Analysis
+From the failed findings, select and document 3 findings from the Docker-bench results that you want to harden based on the 5 attack surface areas you identified in Step 1. At least 1 of the 3 hardened findings should be different from the ones mentioned in the exercise (i.e. 5.10, 5.14, and 5.22).
