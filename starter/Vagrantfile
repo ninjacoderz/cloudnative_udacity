@@ -40,25 +40,6 @@ Vagrant.configure("2") do |config|
       systemctl enable docker
       usermod -G docker -a $USER
       systemctl restart docker
-
-      echo "Disable firewalld"
-      systemctl stop firewalld
-      systemctl disable firewalld
-
-      echo "Disable apparmor"
-      systemctl stop apparmor
-      systemctl disable apparmor
-
-      echo "Set up rke user"
-      useradd rke
-      usermod -a -G docker rke
-      systemctl restart docker
-
-      echo "Copy auth_keys for rke user"
-      mkdir -p /home/rke/.ssh
-      usermod -d /home/rke/ rke
-      cp /root/.ssh/authorized_keys /home/rke/.ssh
-      chown rke /home/rke -R
     SHELL
     end
   end
