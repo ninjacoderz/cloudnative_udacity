@@ -45,8 +45,8 @@ services:
     cert: ""
     key: ""
     path: ""
-    uid: 0
-    gid: 0
+    uid: 52034
+    gid: 52034
     snapshot: null
     retention: ""
     creation: ""

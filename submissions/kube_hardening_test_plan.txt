@@ -1,0 +1,10 @@
+1. How will you test the changes? 
+    Test the changes by deploying sample applications and services in a mirrored staging environment. 
+    Perform functional testing to ensure that deployments, user access, and service communications work as expected. 
+    Conduct performance tests to monitor resource utilization and simulate load to check for any degradation. 
+    Stability testing will include fault tolerance simulations to confirm recovery and verify that integrations and tools remain compatible.
+
+2. How will you ensure the changes don't negatively affect your cluster? 
+    Ensure changes don’t impact the cluster by closely monitoring performance and stability metrics during and after implementation. 
+    Validate the changes in a production-like environment first to identify any issues before rolling out to live systems. 
+    Implement a rollback plan to revert changes if critical issues are detected, and maintain continuous monitoring post-deployment to catch any emerging problem

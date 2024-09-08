@@ -67,6 +67,7 @@ From the failed findings, select and document 3 findings from the Docker-bench r
         [FAIL] 1.2.10 Ensure auditing is configured for Docker files and directories - /etc/docker/daemon.json (Scored)
         [FAIL] 1.2.11 Ensure auditing is configured for Docker files and directories - /usr/bin/docker-containerd (Scored)
         [FAIL] 1.2.12 Ensure auditing is configured for Docker files and directories - /usr/sbin/runc (Scored)
-    2. I Ensure Content trust for Docker is Enabled (Scored)
+    2. I ensure Content trust for Docker is Enabled (Scored)
         [FAIL] 4.5 Ensure Content trust for Docker is Enabled (Scored)
-    3. 
+    3. I ensure live restore is enabled (Scored)
+        [FAIL] 2.13 Ensure live restore is enabled (Scored)
