@@ -17,6 +17,7 @@ def init(argv):
     ap = ArgumentParser()
     commandline.standard_argparse_options(ap, default_config='./config/dev.yaml')
     options = ap.parse_args(argv)
+
     # 1. Missing Configuration Validation
     # The configuration loaded with commandline.config_from_options(options, CONFIG_SCHEMA) may not be validated properly. While CONFIG_SCHEMA is presumably used for validation, it's important to ensure that the configuration is validated against all required schema fields and constraints.
 
@@ -29,7 +30,9 @@ def init(argv):
     #     config = commandline.config_from_options(options, CONFIG_SCHEMA)
     # except ConfigError as e:
     #     raise ValueError(f"Configuration error: {e}")
+    
     config = commandline.config_from_options(options, CONFIG_SCHEMA)
+
     # 2. Hardcoded Debug Mode
     # The Application instance is created with debug=True. Leaving debug mode enabled in a production environment can expose sensitive information and provide attackers with more detailed error messages and stack traces.
     # Solution: Configure the debug mode based on the environment. For instance, use a configuration value to determine whether debugging should be enabled.
@@ -43,6 +46,7 @@ def init(argv):
             error_middleware,
         ]
     )
+
     # 3. Lack of Error Handling in Middleware Setup
     # The middlewares (session_middleware, csrf_middleware, error_middleware) are added without any checks or validation of their configuration or functionality. If these middlewares are not configured correctly or if they fail to initialize properly, they could introduce security vulnerabilities.
 
