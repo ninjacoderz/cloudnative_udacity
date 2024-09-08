@@ -40,16 +40,6 @@ Vagrant.configure("2") do |config|
       systemctl enable docker
       usermod -G docker -a $USER
       systemctl restart docker
-
-      #install go
-      zypper --non-interactive install wget
-      wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-      tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-      grep -qxF 'export PATH=$PATH:/usr/local/go/bin' ~/.bashrc || echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
-      #install git 
-      zypper --non-interactive install git
-      #install audit
-      zypper --non-interactive install audit
     SHELL
     end
   end
